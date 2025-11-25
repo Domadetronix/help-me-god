@@ -1,15 +1,14 @@
-import type { Question } from "../shared/types";
+import type { QuestionWithId } from "../shared/types";
 
 interface ListItem {
-  item: Question;
-  id: number;
+  item: QuestionWithId;
 }
 
-export const ListItem = ({ item, id }: ListItem) => {
+export const ListItem = ({ item }: ListItem) => {
   return (
     <div className="list-item">
       <h3 className="text-lg font-semibold">
-        {id} {item.question}
+        {item.id} {item.question}
       </h3>
       <ul>
         {item.answers.map((ans) => (
