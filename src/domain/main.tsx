@@ -3,7 +3,6 @@ import { question } from "../shared/data";
 import { SearchBar } from "./search-field";
 import { SearchResults } from "./search-result";
 import { ItemList } from "./list";
-import type { Question } from "../shared/types";
 
 export const SearchModule = () => {
   const [query, setQuery] = useState("");
@@ -17,17 +16,15 @@ export const SearchModule = () => {
     );
   });
 
-  const handleSelect = (item: Question) => {
-    setQuery(item.question);
-  };
-
   const isSearching = query.trim().length;
 
   return (
-    <div style={{ textAlign: "left" }}>
-      <h2>Поиск по базе</h2>
+    <div style={{ textAlign: "left", minHeight: "100vw" }}>
+      <div className="search-block">
+        <h2 style={{ color: "blue" }}>Поиск по базе</h2>
 
-      <SearchBar query={query} setQuery={setQuery} />
+        <SearchBar query={query} setQuery={setQuery} />
+      </div>
 
       {!isSearching ? (
         <div className="mt-4">
@@ -36,7 +33,6 @@ export const SearchModule = () => {
               question: d.question,
               answers: d.answers,
             }))}
-            onSelect={handleSelect}
           />
         </div>
       ) : (

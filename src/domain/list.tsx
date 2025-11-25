@@ -3,14 +3,14 @@ import { ListItem } from "./list-item";
 
 interface ListProps {
   items: Question[];
-  onSelect: (item: Question) => void;
+  // onSelect: (item: Question) => void;
 }
 
-export const ItemList = ({ items, onSelect }: ListProps) => {
+export const ItemList = ({ items }: ListProps) => {
   return (
     <div className="grid gap-3">
       {items.map((item) => (
-        <ListItem item={item} onSelect={onSelect} />
+        <ListItem item={item} />
       ))}
     </div>
   );

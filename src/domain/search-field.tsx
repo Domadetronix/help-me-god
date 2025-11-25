@@ -10,7 +10,7 @@ export const SearchBar = ({ query, setQuery }: SearchBarProps) => {
       value={query}
       onChange={(e) => setQuery(e.target.value)}
       placeholder="Поиск..."
-      className="w-full p-3 rounded-2xl border shadow"
+      className="search-field"
     />
   );
 };

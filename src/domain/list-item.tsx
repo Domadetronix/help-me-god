@@ -2,16 +2,18 @@ import type { Question } from "../shared/types";
 
 interface ListItem {
   item: Question;
-  onSelect: (item: Question) => void;
+  // onSelect: (item: Question) => void;
 }
 
-export const ListItem = ({ item, onSelect }: ListItem) => {
+export const ListItem = ({ item }: ListItem) => {
   return (
-    <div
-      className="p-3 border-b rounded-xl shadow cursor-pointer hover:bg-gray-50"
-      onClick={() => onSelect(item)}>
+    <div className="list-item">
       <h3 className="text-lg font-semibold">{item.question}</h3>
-      <p className="text-sm opacity-80">{item.answers.join(" + ")}</p>
+      <ul>
+        {item.answers.map((ans) => (
+          <li>{ans}</li>
+        ))}
+      </ul>
     </div>
   );
 };

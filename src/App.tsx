@@ -1,4 +1,3 @@
-import "./App.css";
 import { SearchModule } from "./domain/main";
 
 function App() {
