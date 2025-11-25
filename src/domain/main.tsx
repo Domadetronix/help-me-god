@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { question } from "../shared/data";
 import { SearchBar } from "./search-field";
-import { SearchResults } from "./search-result";
 import { ItemList } from "./list";
 
 export const SearchModule = () => {
@@ -16,8 +15,6 @@ export const SearchModule = () => {
     );
   });
 
-  const isSearching = query.trim().length;
-
   return (
     <div style={{ textAlign: "left", minHeight: "100vh" }}>
       <div className="search-block">
@@ -26,25 +23,9 @@ export const SearchModule = () => {
         <SearchBar query={query} setQuery={setQuery} />
       </div>
 
-      {!isSearching ? (
-        <div className="mt-4">
-          <ItemList
-            items={data.map((d) => ({
-              question: d.question,
-              answers: d.answers,
-            }))}
-          />
-        </div>
-      ) : (
-        <div className="mt-4">
-          <SearchResults
-            results={results.map((r) => ({
-              question: r.question,
-              answers: r.answers,
-            }))}
-          />
-        </div>
-      )}
+      <div className="mt-4">
+        <ItemList items={results} />
+      </div>
     </div>
   );
 };
