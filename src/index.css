@@ -7,7 +7,10 @@ body {
   margin: 0px 20px 60px 20px;
   position: relative;
 }
-
+h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
 h3 {
   margin: 0;
   margin-bottom: 8px;
@@ -33,7 +36,7 @@ p {
 .search-block {
   position: sticky;
   top: 0;
-  padding-top: 60px;
+  padding-top: 40px;
   background-color: white;
   padding-bottom: 10px;
 }

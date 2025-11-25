@@ -19,7 +19,7 @@ export const SearchModule = () => {
   const isSearching = query.trim().length;
 
   return (
-    <div style={{ textAlign: "left", minHeight: "100vw" }}>
+    <div style={{ textAlign: "left", minHeight: "100vh" }}>
       <div className="search-block">
         <h2 style={{ color: "blue" }}>Поиск по базе</h2>
 
