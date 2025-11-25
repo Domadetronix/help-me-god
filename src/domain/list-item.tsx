@@ -2,13 +2,15 @@ import type { Question } from "../shared/types";
 
 interface ListItem {
   item: Question;
-  // onSelect: (item: Question) => void;
+  id: number;
 }
 
-export const ListItem = ({ item }: ListItem) => {
+export const ListItem = ({ item, id }: ListItem) => {
   return (
     <div className="list-item">
-      <h3 className="text-lg font-semibold">{item.question}</h3>
+      <h3 className="text-lg font-semibold">
+        {id} {item.question}
+      </h3>
       <ul>
         {item.answers.map((ans) => (
           <li>{ans}</li>

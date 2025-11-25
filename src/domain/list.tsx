@@ -9,8 +9,8 @@ interface ListProps {
 export const ItemList = ({ items }: ListProps) => {
   return (
     <div className="grid gap-3">
-      {items.map((item) => (
-        <ListItem item={item} />
+      {items.map((item, id) => (
+        <ListItem item={item} id={id + 1} />
       ))}
     </div>
   );
